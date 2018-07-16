@@ -1,0 +1,62 @@
+<!-- source/flats/show.html.erb -->
+<body data-gr-c-s-loaded="true">
+  <div id="show">
+    <%= partial "layouts/banner-sub" %>
+      <!-- Access data.flats with owner's name as key -->
+    <div class="header-flat">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-sm-offset-1">
+            <div class="header-flat-details">
+              <% flat = data.flats[owner] %>
+                <!-- Inject flat data in template -->
+              <div class="header-flat-owner  text-center ">
+                <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{owner}", class: "img-circle", width: "80" %>
+                <p><%= owner %></p>
+              </div>
+              <div class="header-flat-name">
+                <h1><%= flat.description %></h1>
+                <p><%= flat.city_name %></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <form action="#">
+              <h4>Book this flat</h4>
+              <div class="row">
+                <div class="col-xs-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="checkin">
+                  </div>
+                </div>
+                <div class="col-xs-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="checkout ">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <select id="Guest" name="number" class="form-control">
+                  <option value="1">1 guest</option>
+                  <option value="2">2 guests</option>
+                  <option value="3">3 guests</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-default" style="width: 100%">Book it</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="flat-description">
+      <div class="container">
+        <div row>
+          <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+            <h2>About this flat</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
